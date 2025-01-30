@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Міністерство Юстиції України</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Cure+Eater&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #001f3d; /* Темно-синій фон */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        header {
+            position: relative;
+            width: 80%; /* Задаємо ширину шапки */
+            height: 15vh; /* Висота шапки */
+            background-color: #001f3d; /* Темно-синій фон */
+            display: flex;
+            justify-content: center; /* Центруємо текст та зображення */
+            align-items: center;
+            border-radius: 20px; /* Заокруглені кути */
+            padding: 50px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Тінь для елементів */
+            opacity: 0; /* Шапка буде невидима при завантаженні */
+            animation: fadeInHeader 2s ease-out forwards; /* Додаємо анімацію для появи шапки */
+        }
+
+        header h1 {
+            color: #fcd116;
+            font-size: 2.5em;
+            margin: 0;
+            font-family: 'Cure Eater', sans-serif;
+            opacity: 0; /* Заголовок буде невидимим при завантаженні */
+            animation: fadeInText 2s ease-out forwards; /* Анімація для заголовка */
+            transition: transform 0.3s ease-in-out; /* Додаємо ефект для анімації масштабування */
+        }
+
+        header img {
+            height: 65%; /* Висота зображення в межах шапки */
+            width: auto; /* Зберігає пропорції зображення */
+            margin-left: 20px; /* Відступ між текстом і логотипом */
+            transition: transform 0.3s ease-in-out; /* Додаємо ефект масштабування */
+        }
+
+        /* Анімація для зображення, яке збільшується при наведенні */
+        header img:hover {
+            transform: scale(1.2); /* Збільшення зображення на 20% */
+        }
+
+        /* Анімація для заголовка */
+        header h1:hover {
+            transform: scale(1.1); /* Збільшення заголовка на 10% */
+        }
+
+        @keyframes fadeInHeader {
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInText {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1em 0;
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+            margin-top: 1em;
+            z-index: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            animation: slideInNav 1s ease-out;
+        }
+
+        @keyframes slideInNav {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 25px;
+            color: #fff;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fcd116;
+            transform: scale(1.1);
+            border-color: #fcd116;
+        }
+
+        .content {
+            max-width: 1200px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background-color: #f1c40f;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: #00274d;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .read-more-btn:hover {
+            background-color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Міністерство Юстиції України</h1>
+        <img src="https://minjust.gov.ua/design/css/img/logo.png" alt="Міністерство Юстиції України">
+    </header>
+
+    <nav>
+        <a href="Про Мін'юст.html">Про Мін'юст</a>
+        <a href="Відділи.html">Відділи</a>
+        <a href="Накази.html">Накази</a>
+        <a href="Структура.html">Структура</a>
+        <a href="Контакти.html">Контакти</a>
+    </nav>
+
+    <div class="content">
+        <article>
+            <h2>Ласкаво просимо до офіційного сайту Міністерства Юстиції України</h2>
+            <p>Ми працюємо для забезпечення правопорядку та правосуддя в Україні. Прочитайте більше про нашу діяльність.</p>
+            <a href="Про Мін'юст.html" class="read-more-btn">Дізнатись більше</a>
+        </article>
+    </div>
+
+    <script>
+        // Додаємо ефект для шапки після завантаження сторінки
+        window.onload = function() {
+            const header = document.querySelector('header');
+            const h1 = document.querySelector('header h1');
+            header.style.animation = 'fadeInHeader 2s ease-out forwards';
+            h1.style.animation = 'fadeInText 2s ease-out forwards';
+        }
+    </script>
+</body>
+</html>
