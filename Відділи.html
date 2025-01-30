@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Відділи ДКВС</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Загальний фон */
+    body {
+      background-color: #001f3d;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      animation: backgroundAnimation 10s ease-in-out infinite alternate;
+    }
+
+    /* Анімація для фону */
+    @keyframes backgroundAnimation {
+      0% {
+        background-color: #001f3d;
+      }
+      50% {
+        background-color: #001a30;
+      }
+      100% {
+        background-color: #001f3d;
+      }
+    }
+
+    /* Стиль контейнера */
+    .container {
+      padding: 2rem;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Заголовок */
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fbbf24;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Анімація для заголовка */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Зміна сітки на стовпчик */
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+      align-items: center;
+    }
+
+    /* Стиль для кожної картки */
+    .department {
+      background-color: #2d3748;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      opacity: 0;
+      animation: slideUp 0.8s forwards;
+      width: 90%;
+      max-width: 800px; /* Максимальна ширина картки */
+    }
+
+    /* Анімація для появи карток */
+    @keyframes slideUp {
+      0% {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Ефект при наведенні на картку */
+    .department:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Заголовок для кожної картки */
+    .department h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #eeff54;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      animation: textGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    /* Анімація для заголовка картки */
+    @keyframes textGlow {
+      0% {
+        text-shadow: 0 0 10px #d0ff00, 0 0 20px #d0ff00;
+      }
+      50% {
+        text-shadow: 0 0 20px #d0ff00, 0 0 30px #d0ff00;
+      }
+      100% {
+        text-shadow: 0 0 10px #d0ff00, 0 0 20px #d0ff00;
+      }
+    }
+
+    /* Стиль для списку завдань */
+    .tasks {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .tasks li {
+      color: #ffffff;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      transition: color 0.3s ease-in-out;
+    }
+
+    /* Ефект при наведенні на пункти завдань */
+    .tasks li:hover {
+      color: #003b83;
+    }
+
+    /* Стиль для кнопки */
+    .btn {
+      background-color: #60a5fa;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      color: white;
+      border-radius: 0.5rem;
+      margin-top: 2rem;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* Анімація для кнопки */
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Початковий стиль для меню (сховане) */
+    #menu {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 2000;
+            width: 500px;
+            text-align: center;
+        }
+
+        /* Стиль для кнопки */
+        .btn {
+            padding: 10px 20px;
+            background-color: #f39c12;
+            color: #00274d;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 10px 0;
+            width: 50%;
+        }
+
+        .btn:hover {
+            background-color: #f39c12;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1em 0;
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+            margin-top: 1em;
+            z-index: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            animation: slideInNav 1s ease-out;
+        }
+
+        @keyframes slideInNav {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 25px;
+            color: #ffffff;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fcd116;
+            transform: scale(1.3);
+            border-color: #fcd116;
+        }
+
+
+
+  </style>
+</head>
+    <nav>
+     <a href="index.html">Головна</a>
+     <a href="Про Мін'юст.html">Про Мін'юст</a>
+     <a href="Накази.html">Накази</a>
+     <a href="Структура.html">Структура</a>
+     <a href="Контакти.html">Контакти</a>
+    </nav>
+<body>
+  <div class="container">
+    <h1>Відділи ДКВС</h1>
+
+    
+
+    <div class="grid">
+      <div class="department">
+        <h2>НК - Навчальний корпус</h2>
+        <ul class="tasks">
+          <li>Освоєння базових знань і принципів організації роботи ДКВС.</li>
+          <li>Знайомство з основними функціями та правилами кожного підрозділу.</li>
+          <li>Вивчення вимог субординації, службової етики та дисципліни.</li>
+        </ul>
+      </div>
+
+      <div class="department">
+        <h2>ДПП - Департамент професійної підготовки</h2>
+        <ul class="tasks">
+          <li>Організація навчання та підготовки персоналу.</li>
+          <li>Розробка і впровадження програм підвищення кваліфікації.</li>
+          <li>Оцінка ефективності професійної підготовки кадрів.</li>
+          <li>Проведення тренінгів, курсів, атестацій.</li>
+        </ul>
+      </div>
+
+      <div class="department">
+        <h2>УПВ - Управління перевезенням в’язнів</h2>
+        <ul class="tasks">
+          <li>Організація та контроль перевезень осіб, позбавлених волі.</li>
+          <li>Забезпечення безпеки при транспортуванні засуджених.</li>
+          <li>Підготовка і супровід транспортних засобів для перевезення в'язнів.</li>
+          <li>Координація з іншими державними органами для перевезень.</li>
+        </ul>
+      </div>
+
+      <div class="department">
+        <h2>ОВ - Оперативний відділ</h2>
+        <ul class="tasks">
+          <li>Організація оперативних заходів та спеціальних операцій.</li>
+          <li>Виявлення та нейтралізація загроз безпеці.</li>
+          <li>Моніторинг і контроль за правопорушеннями всередині установи.</li>
+          <li>Реагування на надзвичайні ситуації, а також проведення розслідувань.</li>
+        </ul>
+      </div>
+    </div>
+
+    
+     <!-- Кнопка, що відкриває меню -->
+     <button class="btn" onclick="openMenu()">Дізнатись більше про відділи</button>
+
+     <!-- Меню, яке спочатку приховане -->
+     <div id="menu">
+         <h2>Виберіть відділ який вас зацікавив</h2>
+         <button class="btn" onclick="window.location.href='ДПП.html';">ДПП - Департамент професійної підготовки</button>
+         <button class="btn" onclick="window.location.href='УПВ.html';">УПВ - Управління перевезенням в’язнів</button>
+         <button class="btn" onclick="window.location.href='ОВ.html';">ОВ - Оперативний відділ</button>
+         <button class="btn" onclick="closeMenu()">Закрити меню</button>
+     </div>
+ 
+     <script>
+         // Функція для відкриття меню
+         function openMenu() {
+             document.getElementById('menu').style.display = 'block';
+         }
+ 
+         // Функція для закриття меню
+         function closeMenu() {
+             document.getElementById('menu').style.display = 'none';
+         }
+        
+    </script>
+    
+    
+  </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Департамент професійної підготовки (ДПП)</title>
+    <link rel="icon" href="https://minjust.gov.ua/design/css/img/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #001f3d; /* Темно-синій фон */
+        color: white;
+        text-align: center;
+        animation: fadeInBody 1s ease-out;
+        line-height: 1.6;
+    }
+    
+    @keyframes fadeInBody {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    header {
+        background: linear-gradient(145deg, #001f3d, #003366);
+        padding: 25px;
+        font-size: 2.5em;
+        color: #fcd116;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+        border-radius: 12px;
+        opacity: 0;
+        animation: fadeInHeader 1.5s ease-out forwards;
+    }
+    
+    @keyframes fadeInHeader {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .content {
+        max-width: 900px;
+        margin: 40px auto;
+        font-size: 1.3em;
+        opacity: 0;
+        animation: fadeInContent 2s ease-out forwards;
+        text-align: left;
+    }
+    
+    @keyframes fadeInContent {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    h2 {
+        font-size: 1.8em;
+        color: #fcd116;
+        margin-top: 30px;
+    }
+    
+    p {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .leader-list {
+        list-style-type: none;
+        padding: 0;
+        font-size: 1.2em;
+        margin-top: 20px;
+    }
+    
+    .leader-list li {
+        margin: 12px 0;
+        border-bottom: 2px solid #fcd116;
+        padding: 8px 0;
+    }
+    
+    .leader-list li strong {
+        color: #fcd116;
+    }
+    
+    /* Кнопка "Повернутись назад" */
+    .back-button {
+        display: inline-block;
+        background-color: #fcd116;
+        color: #00274d;
+        padding: 12px 25px;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-radius: 8px;
+        margin-top: 30px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        animation: fadeInButton 2.5s ease-out forwards;
+    }
+    
+    @keyframes fadeInButton {
+        0% {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    .back-button:hover {
+        background-color: #f39c12;
+        transform: scale(1.1);
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Департамент професійної підготовки (ДПП)</h1>
+    </header>
+    <section class="content">
+        <h2>Опис</h2>
+        <p>Департамент професійної підготовки (ДПП) відповідає за організацію навчання та підготовки персоналу. Члени департаменту займаються розробкою та впровадженням програм підвищення кваліфікації, проводять тренінги, атестації та оцінюють ефективність професійної підготовки кадрів. ДПП також займається розвитком навичок та знань, що необхідні для ефективної роботи в організації.</p>
+        
+        <h2>Керівний склад</h2>
+        <section>
+         <ul class="leader-list">
+            <li><i class="fas fa-user"></i><strong>Куратор підрозділу:</strong> Іван Товарницький</li>
+            <li><i class="fas fa-user"></i><strong>Керівник відділу:</strong> Ірочка Мельник</li>
+            <li><i class="fas fa-user"></i><strong>Заступник керівника відділу:</strong> Вадим Зозулька</li>
+         </ul>
+        <section>
+    </section>
+    <a href="Відділи.html" class="back-button">Повернутись назад</a>
+</body>
+</html>

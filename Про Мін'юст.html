@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Про Міністерство Юстиції</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://minjust.gov.ua/design/css/img/logo.png">
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #001f3d;
+        color: white;
+        text-align: center;
+        animation: fadeInBody 1s ease-out;
+    }
+    
+    @keyframes fadeInBody {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    header {
+        background: linear-gradient(145deg, #001f3d, #003366);
+        padding: 130px;
+        font-size: 2.1em;
+        color: #fcd116;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+        border-radius: 12px;
+        opacity: 0;
+        animation: fadeInHeader 1.5s ease-out forwards;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    header h1 {
+        margin: 0;
+    }
+    
+    @keyframes fadeInHeader {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    
+/* Контент */
+.content {
+    max-width: 900px;
+    margin: 40px auto;
+    font-size: 1.25em; /* Зменшення шрифту для елегантності */
+    opacity: 0;
+    animation: fadeInContent 1.5s ease-out forwards;
+    text-align: left;
+    background-color: #003b75; /* Світло-блакитний відтінок фонового кольору */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.1); /* Легка елегантна тінь */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif; /* Приємний шрифт */
+    line-height: 1.6;
+}
+
+/* Анімація для появи контенту */
+@keyframes fadeInContent {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Заголовки в контенті */
+.content h2 {
+    color: #fcd116; /* Жовтий акцент */
+    font-size: 2rem;
+    margin-top: 30px;
+    border-bottom: 3px solid #fcd116; /* Жовта лінія під заголовком */
+    padding-bottom: 10px;
+    display: inline-block;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgb(255, 255, 255); /* Легка тінь */
+}
+
+/* Важливий текст в контенті (жирний) */
+.content p strong {
+    font-weight: bold;
+    color: #003366; /* Темно-синій колір для важливого тексту */
+}
+
+/* Список елементів */
+.content ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.content ul li {
+    margin: 20px 0;
+    position: relative;
+    padding-left: 35px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+/* Додавання іконок до списку */
+.content ul li::before {
+    content: "\2022"; /* Юнікод для кульки списку */
+    position: absolute;
+    left: 10px;
+    top: 0;
+    color: #fcd116; /* Жовта іконка */
+    font-size: 1.8em; /* Розмір іконки */
+}
+
+/* Підтримка мобільних пристроїв */
+@media (max-width: 768px) {
+    .content {
+        margin: 20px;
+        font-size: 1.15em;
+        padding: 20px;
+    }
+
+    .content h2 {
+        font-size: 1.8rem;
+    }
+
+    .content ul li {
+        font-size: 1em;
+    }
+}
+
+
+    
+    h2 {
+        font-size: 1.8em;
+        color: #fcd116;
+        margin-top: 30px;
+    }
+    
+    p {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .animated-logo {
+        width: 148px;
+        transition: transform 0.3s ease-in-out;
+        cursor: move;
+        margin-top: 20px;
+    }
+
+    .animated-logo:hover {
+        transform: scale(1.2);
+    }
+
+    .drop-zone {
+        width: 200px;
+        height: 200px;
+        background-color: #003366;
+        border: 2px dashed #fcd116;
+        border-radius: 10px;
+        position: relative;
+        margin-top: 50px;
+        transition: background-color 0.3s ease;
+    }
+
+    .drop-zone:hover {
+        background-color: #001f3d;
+    }
+    
+    .back-button {
+        display: inline-block;
+        background-color: #fcd116;
+        color: #00274d;
+        padding: 12px 25px;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-radius: 8px;
+        margin-top: 30px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        animation: fadeInButton 3s ease-out forwards;
+    }
+    
+    @keyframes fadeInButton {
+        0% {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    .back-button:hover {
+        background-color: #f39c12;
+        transform: scale(1.1);
+    }
+
+
+/* Навігаційне меню */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1em 0;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+    margin-top: 1em;
+    z-index: 1;
+    border-radius: 20px; /* Add rounded corners */
+    overflow: hidden; /* To make sure content doesn't overflow the rounded corners */
+}
+
+
+nav a {
+    text-decoration: none;
+    margin: 0 25px;
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 10px; /* Add some padding for better appearance */
+    border: 2px solid transparent; /* Transparent border initially */
+    border-radius: 12px; /* Rounded corners */
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #fcd116; /* Yellow color on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+    border-color: #fcd116; /* Add yellow border on hover */
+}
+
+
+nav a:hover {
+    color: #fcd116; /* Yellow color on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+    border-color: #fcd116; /* Add yellow border on hover */
+}
+
+        article strong {
+            color: #f39c12; /* Light Yellow for strong text */
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background-color: #f1c40f; /* Yellow color for the button */
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: #00274d;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .read-more-btn:hover {
+            background-color: #f39c12; /* Light yellow for hover effect */
+        }
+
+
+/* Анімація появи меню */
+@keyframes slideInNav {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Про Міністерство Юстиції</h1>
+        <img src="https://minjust.gov.ua/design/css/img/logo.png" alt="Міністерство Юстиції Логотип" class="animated-logo">
+    </header>
+
+    <nav>
+        <a href="index.html">Головна</a>
+        <a href="Структура.html">Структура</a>
+        <a href="Накази.html">Накази</a>
+        <a href="Відділи.html">Відділи</a>
+        <a href="Контакти.html">Контакти</a>
+       </nav>
+
+    <section class="content">
+        <h2>Опис</h2>
+        <p>Міністерство юстиції України є одним із ключових державних органів, відповідальних за здійснення управління в юридичній сфері. Воно координує державну політику у сфері правосуддя та прав людини, підтримує ефективність судової системи, а також розробляє та впроваджує законодавчі ініціативи. Крім того, Міністерство здійснює постійний контроль за виконанням законодавства і створює умови для стабільності правопорядку в Україні.</p>
+    
+        <p>Основні функції Міністерства включають нормотворчість, забезпечення правового порядку, контроль за діяльністю нотаріусів, адвокатів, а також організацію виконання законів та покарань. Завдяки цим функціям Міністерство відіграє вирішальну роль у процесах реформування правової системи країни.</p>
+    
+        <h2>Місія та завдання</h2>
+        <p>Місія Міністерства юстиції України — забезпечити належний рівень правової системи держави та захисту прав громадян, надаючи необхідні умови для ефективного виконання законів і підтримки правопорядку.</p>
+    
+        <p>Завдання Міністерства охоплюють:</p>
+        <ul>
+            <li>Розробка та втілення ініціатив, спрямованих на оновлення нормативно-правових актів;</li>
+            <li>Реформування судової системи, адвокатури та нотаріату;</li>
+            <li>Проведення інспекції за діяльністю органів юстиції, правосуддя та органів, що забезпечують дотримання законності;</li>
+            <li>Забезпечення прав і свобод громадян України через правовий захист та підтримку в судах;</li>
+            <li>Організація адвокатської та медіаційної практики для громадян;</li>
+            <li>Міжнародне співробітництво у сфері правосуддя, участь у міжнародних організаціях та правозахисних інституціях.</li>
+        </ul>
+    
+        <h2>Історія Міністерства</h2>
+        <p>Міністерство юстиції України було засновано ще в 1991 році з метою розвитку правової системи в незалежній Україні. Першочерговими завданнями були розробка основних норм для нової системи державного управління та юридичних органів, адаптація до міжнародних стандартів у сфері правознавства. Останніми роками Міністерство бере активну участь у реформах, пов’язаних із судовою реформою, захистом прав людини та впровадженням цифровізації в правовому секторі.</p>
+    
+        <h2>Нагороди та досягнення</h2>
+        <p>Міністерство юстиції України неодноразово отримувало нагороди за ефективну роботу в сфері розробки правових норм та реформ, включаючи нагороди від міжнародних організацій за відмінні досягнення в забезпеченні прав і свобод громадян. Завдяки зусиллям Міністерства досягнуто значного прогресу в адаптації української правової системи до європейських стандартів.</p>
+    
+        <h2>Структура та підрозділи Міністерства</h2>
+        <p>Міністерство має кілька основних структурних підрозділів, кожен з яких відповідає за окремі аспекти правової діяльності:</p>
+        <ul>
+            <li>Департамент правового забезпечення;</li>
+            <li>Департамент законодавчих ініціатив;</li>
+            <li>Департамент судової практики;</li>
+            <li>Департамент правосуддя для неповнолітніх;</li>
+            <li>Департамент інспекції законодавства та правових норм;</li>
+            <li>Юридичний департамент, що відповідає за консультації щодо правових спорів і конфліктів, тощо.</li>
+        </ul>
+    </section>
+    
+        
+
+</body>
+</html>

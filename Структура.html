@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Структура Директорату</title>
+    
+    <!-- Підключаємо Font Awesome для іконок -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
+    <!-- Ваш основний стиль -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Загальний стиль */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #001f3d;
+            color: white;
+            text-align: center;
+        }
+        
+        header {
+            background: linear-gradient(145deg, #001f3d, #003366);
+            padding: 30px;
+            font-size: 2.1em;
+            color: #fcd116;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            opacity: 0;
+            animation: fadeInHeader 1.5s ease-out forwards;
+        }
+        
+        header h1 {
+            margin: 0;
+        }
+        
+        @keyframes fadeInHeader {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Контент */
+.content {
+    max-width: 1000px;
+    margin: 40px auto;
+    font-size: 1.3em;
+    opacity: 0;
+    animation: fadeInContent 2s ease-out forwards;
+    text-align: left;
+    background-color: #00274d; /* Білий фон для чистоти */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Легка тінь для елегантності */
+    color: #d3d3d3; /* Темно-сірий текст для хорошого контрасту */
+    font-family: 'Roboto', sans-serif; /* Легкий, читабельний шрифт */
+    line-height: 1.6; /* Вища висота рядків для комфорту */
+}
+
+/* Анімація для появи контенту */
+@keyframes fadeInContent {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Заголовки в контенті */
+.content h2 {
+    color: #fcd116; /* Жовтий колір для акцентів */
+    font-size: 2rem;
+    margin-top: 30px;
+    border-bottom: 2px solid #fcd116; /* Жовта лінія під заголовком */
+    padding-bottom: 8px;
+    display: inline-block;
+    letter-spacing: 1px; /* Міжбуквенний інтервал для витонченості */
+    font-weight: 500; /* Виділення заголовків */
+}
+
+/* Список елементів в контенті */
+.content ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.1em;
+}
+
+.content ul li {
+    margin: 15px 0;
+    position: relative;
+    padding-left: 30px; /* Відступ для лівого списку */
+    font-weight: 400;
+    color: #fcfcfc; /* Текст із хорошим контрастом */
+}
+
+/* Додавання іконок до списку */
+.content ul li::before {
+    content: "\2022"; /* Юнікод для кульки списку */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fcd116; /* Жовта іконка */
+    font-size: 1.8em; /* Розмір іконки */
+}
+
+/* Підтримка мобільних пристроїв */
+@media (max-width: 768px) {
+    .content {
+        margin: 20px;
+        font-size: 1.2em;
+    }
+
+    .content h2 {
+        font-size: 1.8rem;
+    }
+
+    .content ul li {
+        font-size: 1em;
+    }
+}
+
+/* Анімація кнопок */
+.back-button {
+    display: inline-block;
+    background-color: #fcd116; /* Жовта кнопка */
+    color: #00274d; /* Темно-синій текст */
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 30px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 15px rgb(255, 255, 255); /* Легка тінь */
+}
+
+.back-button:hover {
+    background-color: #f39c12; /* Темніша жовта при наведенні */
+    transform: scale(1.1);
+}
+
+/* Поле контенту для великих екранів */
+@media (min-width: 1024px) {
+    .content {
+        max-width: 1200px;
+    }
+}
+
+
+
+        /* Список */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        
+        ul i {
+            color: #fcd116; /* жовті іконки */
+            margin-right: 10px;
+        }
+
+        /* Зображення */
+        .image-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-box {
+            width: 100%;
+            max-width: 1200px;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 3px solid #fcd116;
+            padding: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+
+        .animated-logo {
+        width: 148px;
+        transition: transform 0.3s ease-in-out;
+        cursor: cursor;
+        margin-top: 20px;
+    }
+
+    .animated-logo:hover {
+        transform: scale(1.2);
+    }
+
+    .drop-zone {
+        width: 200px;
+        height: 200px;
+        background-color: #003366;
+        border: 2px dashed #fcd116;
+        border-radius: 10px;
+        position: relative;
+        margin-top: 50px;
+        transition: background-color 0.3s ease;
+    }
+
+    .drop-zone:hover {
+        background-color: #001f3d;
+    }
+
+        .structure-image {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Кнопка */
+        .back-button {
+            display: inline-block;
+            background-color: #fcd116;
+            color: #00274d;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 30px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            animation: fadeInButton 3s ease-out forwards;
+        }
+
+        @keyframes fadeInButton {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .back-button:hover {
+            background-color: #f39c12;
+            transform: scale(1.1);
+        }
+
+
+/* Навігаційне меню */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1em 0;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+    margin-top: 1em;
+    z-index: 1;
+    border-radius: 20px; /* Add rounded corners */
+    overflow: hidden; /* To make sure content doesn't overflow the rounded corners */
+}
+
+
+nav a {
+    text-decoration: none;
+    margin: 0 25px;
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 10px; /* Add some padding for better appearance */
+    border: 2px solid transparent; /* Transparent border initially */
+    border-radius: 12px; /* Rounded corners */
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #fcd116; /* Yellow color on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+    border-color: #fcd116; /* Add yellow border on hover */
+}
+
+
+nav a:hover {
+    color: #fcd116; /* Yellow color on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+    border-color: #fcd116; /* Add yellow border on hover */
+}
+
+        article strong {
+            color: #f39c12; /* Light Yellow for strong text */
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            background-color: #f1c40f; /* Yellow color for the button */
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: #00274d;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .read-more-btn:hover {
+            background-color: #f39c12; /* Light yellow for hover effect */
+        }
+
+
+/* Анімація появи меню */
+@keyframes slideInNav {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Структура Директорату</h1>
+        <img src="https://minjust.gov.ua/design/css/img/logo.png" alt="Міністерство Юстиції Логотип" class="animated-logo">
+    </header>
+
+    <nav>
+    <a href="index.html">Головна</a>
+    <a href="Про Мін'юст.html">Про Мін'юст</a>
+    <a href="Накази.html">Накази</a>
+    <a href="Відділи.html">Відділи</a>
+    <a href="Контакти.html">Контакти</a>
+    </nav>
+
+
+        <section class="content">
+         <h2>Опис структури</h2>
+         <p>Директорат є основним органом управління та контролю в нашій організації. Його основні функції включають координацію роботи всіх відділів та департаментів, а також забезпечення ефективного виконання стратегічних та оперативних завдань.</p>
+    
+         <p>Директорат є ключовою ланкою у системі управління нашої організації, виконуючи функцію основного органу, який забезпечує ефективне керівництво та контроль за виконанням завдань, розподілом обов'язків і координацією діяльності між різними підрозділами. Цей орган має стратегічне значення, оскільки визначає не лише поточні пріоритети, але й перспективи розвитку, організаційної структури та підвищення продуктивності.</p>
+    
+         <h3>Основні функції Директорату</h3>
+         <ul>
+            <li><strong>Координація роботи всіх відділів та департаментів:</strong> Директорат організовує і контролює діяльність численних структурних підрозділів, сприяючи взаємодії між ними та забезпеченню виконання щоденних завдань.</li>
+            <li><strong>Забезпечення ефективного виконання стратегічних та оперативних завдань:</strong> Директорат працює над забезпеченням високої ефективності реалізації стратегічних цілей та оперативних задач організації.</li>
+            <li><strong>Моніторинг та аналіз діяльності:</strong> Постійний аналіз і контроль за виконанням обов'язків на рівні департаментів допомагають своєчасно виявляти невідповідності та коригувати роботу.</li>
+            <li><strong>Оптимізація ресурсів та бюджетування:</strong> Утримання і забезпечення фінансової стабільності організації через планування, перерозподіл ресурсів та контроль за витратами.</li>
+            <li><strong>Підвищення ефективності внутрішніх комунікацій:</strong> Директорат працює над покращенням комунікацій між структурними одиницями організації для оперативного вирішення питань.</li>
+            <li><strong>Інноваційний розвиток і модернізація:</strong> Розробка та реалізація інноваційних стратегій та технологій для забезпечення лідерства в галузі.</li>
+            <li><strong>Підвищення професійного розвитку персоналу:</strong> Запровадження ефективних програм розвитку кадрів для підтримки високої кваліфікації співробітників.</li>
+         </ul>
+    
+         <h3>Організаційна структура Директорату</h3>
+         <p>Організаційна структура Директорату включає кілька ключових підрозділів, які спеціалізуються на виконанні конкретних функцій:</p>
+         <ul>
+            <li><strong>Відділ стратегічного планування</strong> — розробляє довгострокову стратегію організації.</li>
+            <li><strong>Відділ з організаційного розвитку</strong> — займається покращенням організаційних процесів і впровадженням нових бізнес-підходів.</li>
+            <li><strong>Відділ інформаційних технологій</strong> — відповідає за впровадження та підтримку сучасних технологій.</li>
+            <li><strong>Юридичний відділ</strong> — контролює правові аспекти діяльності організації, включаючи складання угод і договорів.</li>
+            <li><strong>Відділ комунікацій</strong> — займається зв'язками з громадськістю та внутрішніми комунікаціями.</li>
+         </ul>
+    
+         <h3>Роль Директорату в загальній системі управління</h3>
+         <p>Директорат є важливим органом у забезпеченні взаємодії між вищим керівництвом та різними відділами. Він підтримує та координує діяльність усіх ланок організації, допомагаючи вирішувати стратегічні завдання та оптимізувати робочі процеси для досягнення максимальних результатів. Також важливим є забезпечення прозорості, що гарантує належний рівень контролю за виконанням поточних і стратегічних цілей організації.</p>
+     
+        </section>
+    
+
+        <section>
+            <h2 class="section-title">Структурні підрозділи</h2>
+            <ul>
+                <li><i class="fas fa-user"></i>Керівник директорату</li>
+                <li><i class="fas fa-user"></i>Відділ стратегічного планування</li>
+                <li><i class="fas fa-user"></i>Відділ з організаційного розвитку</li>
+                <li><i class="fas fa-user"></i>Відділ інформаційних технологій</li>
+                <li><i class="fas fa-user"></i>Юридичний відділ</li>
+            </ul>
+        </section>
+
+        <div class="image-container">
+            <div class="image-box">
+                <img src="https://minjust.gov.ua/images/general/2020/03/06/20200306121141-3331.png" alt="Структура Директорату" class="structure-image">
+            </div>
+        </div>
+    </section>
+<!-- Оновлений JavaScript -->
+<script>
+    // Дозволити елементам бути розміщеними (це дозволяє робити drop)
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    // Почати перетягування елементу
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    // Коли елемент був розміщений, ми просто змінюємо його позицію
+    function drop(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData("text");
+        var droppedElement = document.getElementById(data);
+        var dropZone = event.target;
+
+        // Переміщаємо елемент в середині контейнера drop-zone
+        dropZone.appendChild(droppedElement);
+
+        // Можна також додати тут перевірку на зміщення елементів чи конкретне місце для розміщення
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Загальні стилі */
+        body {
+            background-color: #001f3d;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        /* Шапка */
+        .header {
+            background-color: #001f3d;
+            color: #fbbf24;
+            text-align: center;
+            padding: 2rem;
+            border-bottom: 4px solid #fbbf24;
+        }
+
+        .header .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Контейнер */
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background-color: #001a30;
+        }
+
+        .photo-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem; /* Збільшена відстань між картками */
+            flex-wrap: wrap;
+        }
+
+        /* Картка */
+        .photo-card {
+            position: relative;
+            width: 320px;
+            height: 300px;
+            perspective: 1000px;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Внутрішній блок */
+        .photo-card-inner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        /* Передня сторона */
+        .photo-card-front, .photo-card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            border: 2px solid #fbbf24; /* Стильна рамка */
+        }
+
+        .photo-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        /* Задня сторона */
+        .photo-card-back {
+            background: rgba(0, 0, 0, 0.37);
+            color: rgb(255, 208, 0);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: rotateY(180deg);
+            padding: 1rem;
+        }
+
+        /* Контактна інформація */
+        .contact-info {
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Кнопки */
+        .contact-btn {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .telegram {
+            background-color: #0088cc;
+        }
+
+        .discord {
+            background-color: #5865F2;
+        }
+
+        .contact-btn:hover {
+            opacity: 0.85;
+            transform: scale(1.05);
+        }
+
+        /* Анімація повороту */
+        .photo-card.flipped .photo-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1em 0;
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+            margin-top: 1em;
+            z-index: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            animation: slideInNav 1s ease-out;
+        }
+
+        @keyframes slideInNav {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 25px;
+            color: #ffffff;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 10px;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fcd116;
+            transform: scale(1.3);
+            border-color: #fcd116;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайту -->
+    <header class="header">
+        <img src="https://minjust.gov.ua/design/css/img/logo.png" alt="Логотип Міністерства Юстиції" class="logo">
+        <h1>Контактна інформація</h1>
+        <p>Тут ви можете ознайомитись із контактами працівників Міністерства Юстиції України</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Головна</a>
+        <a href="Про Мін'юст.html">Про Мін'юст</a>
+        <a href="Відділи.html">Віділи</a>
+        <a href="Накази.html">Накази</a>
+        <a href="Структура.html">Структура</a>
+       </nav>
+
+    <!-- Контейнер для карток -->
+    <div class="container">
+        
+        <p><strong>Примітка!</strong> Для того щоб побачити контактну інформацію, натисніть на зображення.</p>
+
+        <div class="photo-grid">
+            <!-- Міністр -->
+            <div class="photo-card">
+                <div class="photo-card-inner">
+                    <div class="photo-card-front">
+                        <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/50.webp" alt="Міністр Юстиції">
+                    </div>
+                    <div class="photo-card-back">
+                        <h2>Міністр Юстиції</h2>
+                        <p>Олександр Грецький</p>
+                        <div class="contact-info">
+                            <a href="https://t.me/alex_justice" class="contact-btn telegram">Telegram</a>
+                            <a href="https://discord.com/" class="contact-btn discord">Discord</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Заступник -->
+            <div class="photo-card">
+                <div class="photo-card-inner">
+                    <div class="photo-card-front">
+                        <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/37.webp" alt="Заступник">
+                    </div>
+                    <div class="photo-card-back">
+                        <h2>Заступник</h2>
+                        <p>Вакантно</p>
+                        <div class="contact-info">
+                            <a href="https://t.me/vacant_deputy" class="contact-btn telegram">Telegram</a>
+                            <a href="https://discord.com/" class="contact-btn discord">Discord</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Секретар -->
+            <div class="photo-card">
+                <div class="photo-card-inner">
+                    <div class="photo-card-front">
+                        <img src="https://ukraine-gta.com.ua/images/game/skins/300x280/257.webp" alt="Секретар">
+                    </div>
+                    <div class="photo-card-back">
+                        <h2>Секретар</h2>
+                        <p>Вакантно</p>
+                        <div class="contact-info">
+                            <a href="https://t.me/secretary_vacant" class="contact-btn telegram">Telegram</a>
+                            <a href="https://discord.com/" class="contact-btn discord">Discord</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.photo-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Накази Міністра Юстиції</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #003366;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-image: url('https://github.com/DatsivRoman12334524/mou.ua/blob/main/depositphotos_52886601-stock-illustration-vector-decorative-ukrainian-trident-removebg-preview.png?raw=true');
+            background-size: 40%;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            background: rgba(10, 44, 85, 0.8);
+            color: #ffc107;
+            padding: 20px;
+            font-size: 2.5em;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: rgba(6, 23, 54, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeInContent 1.5s ease-in-out;
+        }
+
+        .order-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #0057b7;
+    color: rgb(255, 255, 255);
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 87, 183, 0.5);
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; /* Запобігає розриву тексту */
+}
+
+.order-button:hover {
+    background: #003f8a;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 15px rgba(0, 87, 183, 0.7);
+}
+
+.order-button svg {
+    width: 20px;
+    height: 20px;
+    fill: rgb(255, 255, 255);
+    margin: 0; /* Усунення зайвих відступів */
+    vertical-align: middle; /* Вирівнювання іконки по центру */
+}
+
+/* Стили для footer */
+footer {
+    background: rgba(10, 44, 85, 0.8);
+    color: #ffc107;
+    padding: 15px;
+    font-size: 1em;
+}
+
+
+/* Навігаційне меню */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1em 0;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+    margin-top: 1em;
+    z-index: 1;
+    border-radius: 20px; /* Add rounded corners */
+    overflow: hidden; /* To make sure content doesn't overflow the rounded corners */
+}
+
+
+nav a {
+    text-decoration: none;
+    margin: 0 25px;
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 10px; /* Add some padding for better appearance */
+    border: 2px solid transparent; /* Transparent border initially */
+    border-radius: 12px; /* Rounded corners */
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #fcd116; /* Yellow color on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+    border-color: #fcd116; /* Add yellow border on hover */
+}
+
+
+nav a:hover {
+    color: #fcd116; /* Yellow color on hover */
+    transform: scale(1.1); /* Slight scale on hover */
+    border-color: #fcd116; /* Add yellow border on hover */
+}
+
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>Накази Міністра Юстиції</h1>
+</header>
+
+<nav>
+    <a href="index.html">Головна</a>
+    <a href="Про Мін'юст.html">Про Мін'юст</a>
+    <a href="Структура.html">Структура</a>
+    <a href="Відділи.html">Відділи</a>
+    <a href="Контакти.html">Контакти</a>
+   </nav>
+
+<div class="container">
+    <h1>📜 Останні Накази</h1>
+    <ul class="order-list">
+        <li class="order-item">
+            <h3>📌 Наказ №001</h3>
+            <p><strong>📅 Дата:</strong> 30.01.2025</p>
+            <p><strong>Опис:</strong> ..... </p>
+            <p>
+                <a href="https://forum.ukraine-gta.com.ua/attachments/large_coat_of_arms-png.244395/" class="order-button">
+                    <svg viewBox="0 0 24 24"><path d="M14.59 7l-5.3 5.29a1 1 0 0 0 0 1.42l5.3 5.29A1 1 0 0 0 16 18V8a1 1 0 0 0-1.41-1z"/></svg>
+                    Переглянути документ
+                </a>
+            </p>
+        </li>
+    </ul>
+</div>
+
+
+<footer>
+    <p>Міністерство Юстиції України &copy; 2025</p>
+</footer>
+</body>
+</html>
